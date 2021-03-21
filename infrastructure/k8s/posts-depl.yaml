@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-course-posts-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservices-course-posts
+  template:
+    metadata:
+      labels:
+        app: microservices-course-posts
+    spec:
+      containers:
+        - name: microservices-course-posts
+          image: vponomarenkoua/microservices-course-posts:0.0.7

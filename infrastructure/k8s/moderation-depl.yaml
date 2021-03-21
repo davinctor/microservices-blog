@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-course-moderation-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservices-course-moderation
+  template:
+    metadata:
+      labels:
+        app: microservices-course-moderation
+    spec:
+      containers:
+        - name: microservices-course-moderation
+          image: vponomarenkoua/microservices-course-moderation:0.0.1

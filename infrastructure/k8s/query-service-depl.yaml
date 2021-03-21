@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-course-query-service-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservices-course-query-service
+  template:
+    metadata:
+      labels:
+        app: microservices-course-query-service
+    spec:
+      containers:
+        - name: microservices-course-query-service
+          image: vponomarenkoua/microservices-course-query-service:0.0.2

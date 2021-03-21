@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-course-event-bus-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservices-course-event-bus
+  template:
+    metadata:
+      labels:
+        app: microservices-course-event-bus
+    spec:
+      containers:
+        - name: microservices-course-event-bus
+          image: vponomarenkoua/microservices-course-event-bus:0.0.9

@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-course-comments-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservices-course-comments
+  template:
+    metadata:
+      labels:
+        app: microservices-course-comments
+    spec:
+      containers:
+        - name: microservices-course-comments
+          image: vponomarenkoua/microservices-course-comments:0.0.3

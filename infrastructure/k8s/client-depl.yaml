@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-course-client-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservices-course-client
+  template:
+    metadata:
+      labels:
+        app: microservices-course-client
+    spec:
+      containers:
+        - name: microservices-course-client
+          image: vponomarenkoua/microservices-course-client:0.0.3

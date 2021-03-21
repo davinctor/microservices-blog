@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservices-course-query-service-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: microservices-course-query-service
+  ports:
+    - name: microservices-course-query-service-port
+      protocol: TCP
+      # the service port to access the pod
+      port: 4002
+      # the port on the pod itself to access desired process
+      targetPort: 4002
